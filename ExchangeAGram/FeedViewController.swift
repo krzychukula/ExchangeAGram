@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -23,6 +24,22 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Dispose of any resources that can be recreated.
     }
     
+    // Actions
+    
+    @IBAction func snapBarButtonTapped(sender: UIBarButtonItem) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            var cameraController = UIImagePickerController()
+            cameraController.delegate = self
+            cameraController.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            let mediaTypes:[AnyObject] = [kUTTypeImage]
+            cameraController.mediaTypes = mediaTypes
+            cameraController.allowsEditing = false
+            
+            self.presentViewController(cameraController, animated: true, completion: nil)
+        }
+    }
+    
     // UICollectionViewDataSource:
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -35,7 +52,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        return UICollectionViewCell()
+        return collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as FeedCell
     }
     
     
