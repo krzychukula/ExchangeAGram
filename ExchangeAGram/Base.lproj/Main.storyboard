@@ -42,6 +42,9 @@
                     <navigationItem key="navigationItem" id="1UG-WR-IFn">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="NKF-Uu-tKO"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="p98-jp-lbP" id="NNT-rb-CPZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
