@@ -105,6 +105,11 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
+    //UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let thisItem = feedArray[indexPath.row]
+    }
     
 
     /*
