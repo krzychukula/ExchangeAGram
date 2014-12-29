@@ -109,6 +109,11 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let thisItem = feedArray[indexPath.row]
+        
+        var filterVC = FilterViewController()
+        filterVC.thisFeedItem = thisItem
+        
+        self.navigationController?.pushViewController(filterVC, animated: false)
     }
     
 
