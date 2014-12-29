@@ -17,6 +17,7 @@
 		8335A1821A4F12C500BA605B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335A1811A4F12C500BA605B /* FeedCell.swift */; };
 		8335A1841A4F149400BA605B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8335A1831A4F149400BA605B /* MobileCoreServices.framework */; };
 		8335A1861A5012A500BA605B /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335A1851A5012A500BA605B /* FeedItem.swift */; };
+		83FCB1971A51AB2600EA2F55 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		8335A1811A4F12C500BA605B /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		8335A1831A4F149400BA605B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8335A1851A5012A500BA605B /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				8335A15C1A4ECA5000BA605B /* AppDelegate.swift */,
 				8335A17F1A4F10E600BA605B /* FeedViewController.swift */,
+				83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */,
 				8335A1811A4F12C500BA605B /* FeedCell.swift */,
 				8335A1631A4ECA5000BA605B /* Main.storyboard */,
 				8335A1661A4ECA5000BA605B /* Images.xcassets */,
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83FCB1971A51AB2600EA2F55 /* FilterViewController.swift in Sources */,
 				8335A15D1A4ECA5000BA605B /* AppDelegate.swift in Sources */,
 				8335A1821A4F12C500BA605B /* FeedCell.swift in Sources */,
 				8335A1801A4F10E600BA605B /* FeedViewController.swift in Sources */,
@@ -423,6 +427,7 @@
 				8335A17B1A4ECA5000BA605B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8335A17C1A4ECA5000BA605B /* Build configuration list for PBXNativeTarget "ExchangeAGramTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +436,7 @@
 				8335A17E1A4ECA5000BA605B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
