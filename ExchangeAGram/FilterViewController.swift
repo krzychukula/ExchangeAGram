@@ -14,6 +14,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     var thisFeedItem: FeedItem!
     
     var collectionView:UICollectionView!
+    var context:CIContext = CIContext(options: nil)
     
     let kIntensity = 0.7
 
@@ -86,5 +87,18 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         
         return [blur, instant, noir, unsharpen, monochrome, colorControls, sepia, colorClamp, composite, vignette]
+    }
+    
+    func filteredImageFromImage(imageData:NSData, filter: CIFilter) -> UIImage {
+        let unfilteredImage = CIImage(data: imageData)
+        filter.setValue(unfilteredImage, forKey: kCIInputImageKey)
+        let filteredImage = filter.outputImage
+        
+        let extent = filteredImage.extent()
+        let cgImage = context.createCGImage(filteredImage, fromRect: extent)
+        
+        let finalImage = UIImage(CGImage: cgImage)
+        
+        return finalImage!
     }
 }
