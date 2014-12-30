@@ -15,6 +15,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     var collectionView:UICollectionView!
     var context:CIContext = CIContext(options: nil)
+    var filters:[CIFilter] = []
     
     let kIntensity = 0.7
 
@@ -35,6 +36,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         collectionView.registerClass(FilterCell.self, forCellWithReuseIdentifier: "MyCell")
         
         self.view.addSubview(collectionView)
+        
+        self.filters = photoFilters()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,13 +48,15 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     //UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return self.filters.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
         
-        cell.imageView.image = UIImage(named: "Placeholder")
+        cell.imageView.image = filteredImageFromImage(thisFeedItem.image, filter: filters[indexPath.row])
+        
+        //cell.imageView.image = UIImage(named: "Placeholder")
         
         return cell
     }
@@ -62,7 +67,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     func photoFilters() -> [CIFilter] {
         let blur = CIFilter(name: "CIGaussianBlur")
         let instant = CIFilter(name: "CIPhotoEffectInstant")
-        let noir = CIFilter(name: "CIPhotoEffectnoir")
+        let noir = CIFilter(name: "CIPhotoEffectNoir")
         let transfer = CIFilter(name: "CIPhotoEffectTransfer")
         let unsharpen = CIFilter(name: "CIUnsharpMask")
         let monochrome = CIFilter(name: "CIColorMonochrome")
@@ -74,8 +79,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         sepia.setValue(kIntensity, forKey: kCIInputIntensityKey)
         
         let colorClamp = CIFilter(name: "CIColorClamp")
-        colorClamp.setValue(CIVector(x: 0.9, y: 0.9, z: 0.9), forKey: "inputMaxComponents")
-        colorClamp.setValue(CIVector(x: 0.2, y: 0.2, z: 0.2), forKey: "inputMinComponents")
+        colorClamp.setValue(CIVector(x: 0.9, y: 0.9, z: 0.9, w: 0.9), forKey: "inputMaxComponents")
+        colorClamp.setValue(CIVector(x: 0.2, y: 0.2, z: 0.2, w: 0.2), forKey: "inputMinComponents")
         
         let composite = CIFilter(name: "CIHardLightBlendMode")
         composite.setValue(sepia.outputImage, forKey: kCIInputImageKey)
@@ -92,7 +97,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     func filteredImageFromImage(imageData:NSData, filter: CIFilter) -> UIImage {
         let unfilteredImage = CIImage(data: imageData)
         filter.setValue(unfilteredImage, forKey: kCIInputImageKey)
-        let filteredImage = filter.outputImage
+        let filteredImage:CIImage = filter.outputImage
         
         let extent = filteredImage.extent()
         let cgImage = context.createCGImage(filteredImage, fromRect: extent)
