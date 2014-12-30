@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class FilterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var thisFeedItem: FeedItem!
@@ -53,4 +54,15 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
 
 
+    //Helper
+    
+    func photoFilters() -> [CIFilter] {
+        let blur = CIFilter(name: "CIGaussianBlur")
+        let instant = CIFilter(name: "CIPhotoEffectInstant")
+        let noir = CIFilter(name: "CIPhotoEffectnoir")
+        let transfer = CIFilter(name: "CIPhotoEffectTransfer")
+        let unsharpen = CIFilter(name: "CIUnsharpMask")
+        let monochrome = CIFilter(name: "CIColorMonochrome")
+        return []
+    }
 }
