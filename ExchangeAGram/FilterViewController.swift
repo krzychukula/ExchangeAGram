@@ -75,6 +75,16 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         let colorClamp = CIFilter(name: "CIColorClamp")
         colorClamp.setValue(CIVector(x: 0.9, y: 0.9, z: 0.9), forKey: "inputMaxComponents")
         colorClamp.setValue(CIVector(x: 0.2, y: 0.2, z: 0.2), forKey: "inputMinComponents")
-        return []
+        
+        let composite = CIFilter(name: "CIHardLightBlendMode")
+        composite.setValue(sepia.outputImage, forKey: kCIInputImageKey)
+        
+        let vignette = CIFilter(name: "CIVignette")
+        vignette.setValue(composite.outputImage, forKey: kCIInputImageKey)
+        vignette.setValue(kIntensity * 2, forKey: kCIInputIntensityKey)
+        vignette.setValue(kIntensity * 30, forKey: kCIInputRadiusKey)
+        
+        
+        return [blur, instant, noir, unsharpen, monochrome, colorControls, sepia, colorClamp, composite, vignette]
     }
 }
