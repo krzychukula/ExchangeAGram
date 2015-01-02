@@ -18,6 +18,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     var filters:[CIFilter] = []
     
     let kIntensity = 0.7
+    
+    let placeHolderImage = UIImage(named: "Placeholder")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +66,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
             })
         })
 
-        cell.imageView.image = UIImage(named: "Placeholder")
+        cell.imageView.image = placeHolderImage
         
         return cell
     }
