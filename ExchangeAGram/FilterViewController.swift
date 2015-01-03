@@ -20,6 +20,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     let kIntensity = 0.7
     
     let placeHolderImage = UIImage(named: "Placeholder")
+    
+    let tmp = NSTemporaryDirectory()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,5 +119,19 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         let finalImage = UIImage(CGImage: cgImage)
         
         return finalImage!
+    }
+    
+    //caching functions
+    
+    func cacheImage(imageNumber: Int) {
+        let fileName = "\(imageNumber)"
+        let uniquePath = tmp.stringByAppendingPathComponent(fileName)
+        
+        if !NSFileManager.defaultManager().fileExistsAtPath(uniquePath) {
+            let data = thisFeedItem.thumbNail
+            let filter = self.filters[imageNumber]
+            let filtered = filteredImageFromImage(data, filter: filter)
+            UIImageJPEGRepresentation(filtered, 1.0).writeToFile(uniquePath, atomically: true)
+        }
     }
 }
