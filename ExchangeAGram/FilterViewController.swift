@@ -74,6 +74,22 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         return cell
     }
+    
+    //UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let filteredImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+        
+        let imageData = UIImageJPEGRepresentation(filteredImage, 1.0)
+        self.thisFeedItem.image = imageData
+        
+        let thumbData = UIImageJPEGRepresentation(filteredImage, 0.1)
+        self.thisFeedItem.thumbNail = thumbData
+        
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
 
     //Helper
