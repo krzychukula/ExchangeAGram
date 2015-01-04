@@ -12,7 +12,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
-
+    @IBOutlet weak var fbLoginView: FBLoginView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
