@@ -37,6 +37,7 @@
 		830773481A55CBE700ECA5E5 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = ExchangeAGram/FeedItem.swift; sourceTree = "<group>"; };
 		8307734B1A58324F00ECA5E5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8307734D1A59DB2000ECA5E5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		8307734F1A59DD5600ECA5E5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8335A1571A4ECA5000BA605B /* ExchangeAGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeAGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8335A15B1A4ECA5000BA605B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8335A15C1A4ECA5000BA605B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 				8335A17F1A4F10E600BA605B /* FeedViewController.swift */,
 				83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */,
 				8307734B1A58324F00ECA5E5 /* ProfileViewController.swift */,
+				8307734F1A59DD5600ECA5E5 /* Bridging-Header.h */,
 				8335A1811A4F12C500BA605B /* FeedCell.swift */,
 				83FCB1981A52AFA200EA2F55 /* FilterCell.swift */,
 				8335A1631A4ECA5000BA605B /* Main.storyboard */,
@@ -386,6 +388,7 @@
 				INFOPLIST_FILE = ExchangeAGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeAGram/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -400,6 +403,7 @@
 				INFOPLIST_FILE = ExchangeAGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeAGram/Bridging-Header.h";
 			};
 			name = Release;
 		};
