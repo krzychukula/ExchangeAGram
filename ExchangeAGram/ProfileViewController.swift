@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, FBLoginViewDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -26,14 +26,20 @@ class ProfileViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
+        
     }
-    */
+    
+    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
+        
+    }
+    
+    func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
+        
+    }
+    
+    func loginView(loginView: FBLoginView!, handleError error: NSError!) {
+        
+    }
 
 }
