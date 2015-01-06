@@ -78,21 +78,38 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     //UICollectionViewDelegate
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let filteredImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
         
-        let imageData = UIImageJPEGRepresentation(filteredImage, 1.0)
-        self.thisFeedItem.image = imageData
+        createUIAlertController()
         
-        let thumbData = UIImageJPEGRepresentation(filteredImage, 0.1)
-        self.thisFeedItem.thumbNail = thumbData
+//        let filteredImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+//        
+//        let imageData = UIImageJPEGRepresentation(filteredImage, 1.0)
+//        self.thisFeedItem.image = imageData
+//        
+//        let thumbData = UIImageJPEGRepresentation(filteredImage, 0.1)
+//        self.thisFeedItem.thumbNail = thumbData
+//        
+//        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+//        
+//        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    //UIAlertController helper functions
+    
+    func createUIAlertController(){
+        let alert = UIAlertController(title: "Photo Options", message: "Please choose an options", preferredStyle: UIAlertControllerStyle.Alert)
         
-        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+        alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Add Caption!"
+            textField.secureTextEntry = false//for secure true
+        }
         
-        self.navigationController?.popViewControllerAnimated(true)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
 
     //Helper
+    
     
     func photoFilters() -> [CIFilter] {
         let blur = CIFilter(name: "CIGaussianBlur")
