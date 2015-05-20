@@ -56,7 +56,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as! FilterCell
         
 
         cell.imageView.image = placeHolderImage
@@ -105,14 +105,14 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         
         var text:String
-        let textField = alert.textFields![0] as UITextField
+        let textField = alert.textFields![0] as! UITextField
         
         if (textField.text != nil) {
             text = textField.text
         }
         
         let photoAction = UIAlertAction(title: "Post Photo to Facebook with Caption", style: UIAlertActionStyle.Destructive,
-        { (UIAlertAction) -> Void in
+        handler: { (UIAlertAction) -> Void in
         
         })
         alert.addAction(photoAction)
