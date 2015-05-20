@@ -79,24 +79,14 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        createUIAlertController()
+        createUIAlertController(indexPath)
         
-//        let filteredImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
-//        
-//        let imageData = UIImageJPEGRepresentation(filteredImage, 1.0)
-//        self.thisFeedItem.image = imageData
-//        
-//        let thumbData = UIImageJPEGRepresentation(filteredImage, 0.1)
-//        self.thisFeedItem.thumbNail = thumbData
-//        
-//        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
-//        
-//        self.navigationController?.popViewControllerAnimated(true)
+
     }
     
     //UIAlertController helper functions
     
-    func createUIAlertController(){
+    func createUIAlertController(indexPath: NSIndexPath){
         let alert = UIAlertController(title: "Photo Options", message: "Please choose an options", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -113,12 +103,14 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         let photoAction = UIAlertAction(title: "Post Photo to Facebook with Caption", style: UIAlertActionStyle.Destructive,
         handler: { (UIAlertAction) -> Void in
-        
+            
+            self.saveFilterToCoreData(indexPath)
         })
         alert.addAction(photoAction)
         
         let saveFilterAction = UIAlertAction(title: "Save Filter without posting on Facebook", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             
+            self.saveFilterToCoreData(indexPath)
         }
         alert.addAction(saveFilterAction)
         
@@ -134,6 +126,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     //Helper
     
+
     
     func photoFilters() -> [CIFilter] {
         let blur = CIFilter(name: "CIGaussianBlur")
@@ -176,6 +169,20 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         let finalImage = UIImage(CGImage: cgImage)
         
         return finalImage!
+    }
+    
+    func saveFilterToCoreData(indexPath: NSIndexPath) {
+        let filteredImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+        
+        let imageData = UIImageJPEGRepresentation(filteredImage, 1.0)
+        self.thisFeedItem.image = imageData
+        
+        let thumbData = UIImageJPEGRepresentation(filteredImage, 0.1)
+        self.thisFeedItem.thumbNail = thumbData
+        
+        (UIApplication.sharedApplication().delegate as! AppDelegate).saveContext()
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     //caching functions
