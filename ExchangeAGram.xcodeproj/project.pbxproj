@@ -19,6 +19,8 @@
 		8335A1801A4F10E600BA605B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335A17F1A4F10E600BA605B /* FeedViewController.swift */; };
 		8335A1821A4F12C500BA605B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335A1811A4F12C500BA605B /* FeedCell.swift */; };
 		8335A1841A4F149400BA605B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8335A1831A4F149400BA605B /* MobileCoreServices.framework */; };
+		8351D3131B124BDE00F123CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351D3121B124BDE00F123CF /* MapViewController.swift */; };
+		8351D3151B124EE800F123CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8351D3141B124EE800F123CF /* MapKit.framework */; };
 		83FCB1971A51AB2600EA2F55 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */; };
 		83FCB1991A52AFA200EA2F55 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCB1981A52AFA200EA2F55 /* FilterCell.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		8335A17F1A4F10E600BA605B /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8335A1811A4F12C500BA605B /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		8335A1831A4F149400BA605B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8351D3121B124BDE00F123CF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8351D3141B124EE800F123CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		83FCB1981A52AFA200EA2F55 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8351D3151B124EE800F123CF /* MapKit.framework in Frameworks */,
 				8335A1841A4F149400BA605B /* MobileCoreServices.framework in Frameworks */,
 				8307734E1A59DB2000ECA5E5 /* FacebookSDK.framework in Frameworks */,
 			);
@@ -109,6 +114,7 @@
 				8335A15C1A4ECA5000BA605B /* AppDelegate.swift */,
 				8335A17F1A4F10E600BA605B /* FeedViewController.swift */,
 				83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */,
+				8351D3121B124BDE00F123CF /* MapViewController.swift */,
 				8307734B1A58324F00ECA5E5 /* ProfileViewController.swift */,
 				8307734F1A59DD5600ECA5E5 /* Bridging-Header.h */,
 				8335A1811A4F12C500BA605B /* FeedCell.swift */,
@@ -125,6 +131,7 @@
 		8335A15A1A4ECA5000BA605B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8351D3141B124EE800F123CF /* MapKit.framework */,
 				8307734D1A59DB2000ECA5E5 /* FacebookSDK.framework */,
 				8335A1831A4F149400BA605B /* MobileCoreServices.framework */,
 				8335A15B1A4ECA5000BA605B /* Info.plist */,
@@ -253,6 +260,7 @@
 				83FCB1971A51AB2600EA2F55 /* FilterViewController.swift in Sources */,
 				8335A15D1A4ECA5000BA605B /* AppDelegate.swift in Sources */,
 				8335A1821A4F12C500BA605B /* FeedCell.swift in Sources */,
+				8351D3131B124BDE00F123CF /* MapViewController.swift in Sources */,
 				8335A1801A4F10E600BA605B /* FeedViewController.swift in Sources */,
 				830773491A55CBE700ECA5E5 /* FeedItem.swift in Sources */,
 				8307734C1A58324F00ECA5E5 /* ProfileViewController.swift in Sources */,
