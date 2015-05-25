@@ -89,6 +89,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         feedItem.image = imageData
         feedItem.thumbNail = thumbNailData
         feedItem.caption = "test caption"
+        feedItem.longitude = locationManager.location.coordinate.longitude
+        feedItem.latitude = locationManager.location.coordinate.latitude
         
         (UIApplication.sharedApplication().delegate as! AppDelegate).saveContext()
         
