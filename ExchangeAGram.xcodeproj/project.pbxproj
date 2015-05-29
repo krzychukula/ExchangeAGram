@@ -20,7 +20,7 @@
 		8335A1841A4F149400BA605B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8335A1831A4F149400BA605B /* MobileCoreServices.framework */; };
 		8351D3131B124BDE00F123CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351D3121B124BDE00F123CF /* MapViewController.swift */; };
 		8351D3151B124EE800F123CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8351D3141B124EE800F123CF /* MapKit.framework */; };
-		83BF70001B13234100AD1A5F /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF6FFF1B13234100AD1A5F /* FeedItem.swift */; };
+		83BF70021B18383900AD1A5F /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF70011B18383900AD1A5F /* FeedItem.swift */; };
 		83FCB1971A51AB2600EA2F55 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */; };
 		83FCB1991A52AFA200EA2F55 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCB1981A52AFA200EA2F55 /* FilterCell.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,7 @@
 		8335A1831A4F149400BA605B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8351D3121B124BDE00F123CF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8351D3141B124EE800F123CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		83BF6FFF1B13234100AD1A5F /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = ExchangeAGram/FeedItem.swift; sourceTree = "<group>"; };
+		83BF70011B18383900AD1A5F /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = ExchangeAGram/FeedItem.swift; sourceTree = "<group>"; };
 		83FCB1961A51AB2600EA2F55 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		83FCB1981A52AFA200EA2F55 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +83,7 @@
 		8307734A1A55CC1300ECA5E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				83BF6FFF1B13234100AD1A5F /* FeedItem.swift */,
+				83BF70011B18383900AD1A5F /* FeedItem.swift */,
 				8335A15E1A4ECA5000BA605B /* ExchangeAGram.xcdatamodeld */,
 			);
 			name = Model;
@@ -261,7 +261,7 @@
 				8335A15D1A4ECA5000BA605B /* AppDelegate.swift in Sources */,
 				8335A1821A4F12C500BA605B /* FeedCell.swift in Sources */,
 				8351D3131B124BDE00F123CF /* MapViewController.swift in Sources */,
-				83BF70001B13234100AD1A5F /* FeedItem.swift in Sources */,
+				83BF70021B18383900AD1A5F /* FeedItem.swift in Sources */,
 				8335A1801A4F10E600BA605B /* FeedViewController.swift in Sources */,
 				8307734C1A58324F00ECA5E5 /* ProfileViewController.swift in Sources */,
 				8335A1601A4ECA5000BA605B /* ExchangeAGram.xcdatamodeld in Sources */,
