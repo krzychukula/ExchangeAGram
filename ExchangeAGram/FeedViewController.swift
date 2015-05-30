@@ -91,6 +91,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         feedItem.caption = "test caption"
         feedItem.longitude = locationManager.location.coordinate.longitude
         feedItem.latitude = locationManager.location.coordinate.latitude
+        let uuid = NSUUID().UUIDString
+        feedItem.uniqueID = uuid
+        
         
         (UIApplication.sharedApplication().delegate as! AppDelegate).saveContext()
         
