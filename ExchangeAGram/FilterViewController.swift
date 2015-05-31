@@ -180,6 +180,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.thisFeedItem.thumbNail = thumbData
         
         self.thisFeedItem.caption = caption
+        self.thisFeedItem.filtered = true
         
         (UIApplication.sharedApplication().delegate as! AppDelegate).saveContext()
         
@@ -224,7 +225,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         if !NSFileManager.defaultManager().fileExistsAtPath(uniquePath) {
             cacheImage(imageNumber)
         }
-        image = UIImage(contentsOfFile: uniquePath)!
+        var retImage  = UIImage(contentsOfFile: uniquePath)!
+        image = UIImage(CGImage: retImage.CGImage, scale: 1.0, orientation: UIImageOrientation.Right)!
         return image
     }
 }

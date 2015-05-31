@@ -94,6 +94,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         let uuid = NSUUID().UUIDString
         feedItem.uniqueID = uuid
         
+        feedItem.filtered = false
+        
         
         (UIApplication.sharedApplication().delegate as! AppDelegate).saveContext()
         
@@ -118,8 +120,15 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! FeedCell
         var feed = feedArray[indexPath.row]
+        if feed.filtered == true {
+            let retImage = UIImage(data: feed.image)
+            let image = UIImage(CGImage: retImage?.CGImage, scale: 1.0, orientation: UIImageOrientation.Right)
+            cell.imageView.image = image
+        }else{
+            cell.imageView.image = UIImage(data: feed.image)
+        }
         cell.captionLabel.text = feed.caption
-        cell.imageView.image = UIImage(data: feed.image)
+        
         
         return cell
     }
